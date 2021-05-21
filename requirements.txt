@@ -1,0 +1,11 @@
+django
+channels
+whitenoise
+daphne
+dj_database_url
+psycopg2
+requests
+lxml
+pandas
+numpy
+Twisted[tls,http2]

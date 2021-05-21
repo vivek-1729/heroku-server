@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+</head>
+<body>
+    <form id="form" onsubmit="return getName()" method="post"> <!--Call getName() function on submit-->
+        {% csrf_token %}
+        <input class="starterInfo" type="text" name="name" placeholder="Name"/> <!--Ask for name-->
+        <input type="submit" value="Submit">
+        </form>
+    <script>
+        function getName() {
+            var name = document.getElementsByClassName('starterInfo')[0].value; //get name of person
+            window.location.pathname = '/' + name + '/draft/'; //Change the url, this functions as a redirect and is caught by urls.py to redirect to a view
+        return false;
+        };
+    </script>
+</body>
+</html>
